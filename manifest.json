@@ -34,5 +34,5 @@
       "matches": ["http://www.reddit.com/r/*"],
       "js": ["content.js"]
     }
-  ],
+  ]
 }
