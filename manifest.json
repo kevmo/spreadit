@@ -1,33 +1,37 @@
 {
-  "name": "BrowserExtension",
+  "name": "Spread It",
   "version": "0.0.1",
   "manifest_version": 2,
-  "description" : "Description ...",
-  "icons": { "16": "icons/16x16.png", "48": "icons/48x48.png", "128": "icons/128x128.png" },
 
-  "omnibox": { "keyword" : "yeah" },
+  "description" : "Pre-schedule your reddit posts.",
+
+  "icons": { 
+    "16": "icons/16x16.png", 
+    "48": "icons/48x48.png", 
+    "128": "icons/logo128.png" 
+  },
+
+  "omnibox": { 
+    "keyword" : "spreadit" 
+  },
 
   "browser_action": {
     "default_icon": {
-      "19": "icons/19x19.png",
-      "38": "icons/38x38.png"
+      "19": "icons/logo128.png",
+      "38": "icons/logo128.png"
     },
-    "default_title": "That's the tool tip",
+    "default_title": "Schedule reddit posts!",
     "default_popup": "browseraction/popup.html"
   },
 
   "background": {
     "scripts": ["background.js"],
-    "persistent": false
-  },
-
-  "chrome_url_overrides" : {
-    "newtab": "newtab/newtab.html"
+    "persistent": true
   },
 
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": ["http://www.reddit.com/r/*"],
       "js": ["content.js"]
     }
   ],

@@ -1,0 +1,9 @@
+*{
+ background-color: gray;
+ height: 500px;
+ width: 800px;
+}
+
+input{
+  background-color: white;
+}
