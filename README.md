@@ -1,4 +1,3 @@
-## Developing Google Chrome Extensions Source Code
+Spreadit
 
-Here's the source code for the Nettuts+ article on Developing Google Chrome 
-Extensions, written by Krasimir Tsonev.
+Smarter Social Sharing
