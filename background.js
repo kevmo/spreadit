@@ -5,4 +5,4 @@ function checkAndPostMessages(){
 }
 
 //check every minute
-setInterval(checkAndPostMessages, 60000)
+setInterval(checkAndPostMessages, 60000);

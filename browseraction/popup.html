@@ -1,16 +1,49 @@
 <!-- VIEWS -->
-<script type="text/javascript" src="popup.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" ></script>
 
-<link rel="stylesheet" type="text/css" href="popup.css">
+  <!DOCTYPE html>
+  <head>
+
+  <meta charset="utf-8" >
+  <link rel="stylesheet" type="text/css" href="popup.css" >
+
+  <script type="text/javascript" src="popup.js"></script>
 
 
-<div class="new">
-  <h2> What would you like to share? </h2> 
+</head>
+
+
+
+<body>
+
+
+  <div class="new">
+    <h2> Post a Link!</h2> 
+
+    <form id="new" action="" method="post">
+      <!-- <input name="textLink" type="radio" value="link" id="radioLink"> <label for="radioLink">Link</label> 
+      <input name="textLink" type="radio" value="text" id="radioText" onclick="post()"> <label for="radioText">Text Post</label> -->
+      Title:<br>
+      <input name="title" autofocus> <br>
+      url: <br>
+      <input type="url" name="path"><br>
+      choose a subreddit: <br>
+      <input name="subreddit"> <br>
+      Schedule a date and time:<br>
+      <input type="date" id="datepicker" >
+      <input type="number" min="1" max="12" step="1" value="1"> : 
+      <input type="number" min="00" max="59" step="05" value="00">
+      <select name="ampm" id="meridiem">
+        <option value="am"> AM </option>
+        <option value="pm"> PM </option>
+      </select> <br>
+      <input type="submit" value="Schedule!">
   
-    
-</div>
+    </form>
+      
+  </div>
 
-<div class="scheduled">  
- <h2> Scheduled </h2> 
-</div>
+  <div class="scheduled">  
+   <h2> Scheduled </h2> 
+  </div>
+
+</body>
