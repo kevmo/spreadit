@@ -35,6 +35,4 @@
       "js": ["content.js"]
     }
   ],
-
-  "devtools_page": "devtools/devtools.html"
 }
