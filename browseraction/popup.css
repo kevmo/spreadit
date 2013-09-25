@@ -1,6 +1,12 @@
 /*VIEWS*/
 html{
  background-color: gray;
+ font-family: sans-serif;
+}
+
+body{
+  height: 700px;
+  width: 800px;
 }
 
 input{
