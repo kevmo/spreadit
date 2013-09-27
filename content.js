@@ -2,6 +2,9 @@
 /// this page is what you do on some kind of DATE event from background.js
 //  
 
+console.log("chrome extension party!");
+
+
 //====================================================|
 //  helper function GET FORM DATA FROM BACKGROUND.JS 
 //
