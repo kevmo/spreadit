@@ -1,11 +1,14 @@
+// REDDIT PAGE STUFF
+/// this page is what you do on some kind of DATE event from background.js
+//  
 
-
-//=============================================|
-//  GET FORM DATA FROM BACKGROUND.JS					 |
+//====================================================|
+//  helper function GET FORM DATA FROM BACKGROUND.JS 
 //
-// perhaps pull it from chrome.storage 	  		 |
+// perhaps pull it from chrome.storage ??? i dont think you can
+// do that with a content page, though
 //
-//=============================================|
+//=====================================================|
 
 
 
@@ -14,16 +17,19 @@
 
 
 //=======================================|
-//
+//    on DATE EVENT FROM background.js
+//    
 //    
 //
+//    navigate to reddit page, post it    |
+//
 //
 //=======================================|
 
 
 
 
-
+/////// STUFF BELOW IS JUST CRAP IVE FOUND THAT MIGHT SERVE AS A GUIDE AT SOME POINT 
 
 // chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
 // 	switch(message.type) {

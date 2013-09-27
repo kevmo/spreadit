@@ -1,6 +1,6 @@
 //=======================================|
-//                                       |
-//helper fn for form data grabber 
+//        STATUS: done copypasta         |
+//helper fn for form data grabber, i.e. submission event handler below
 //=======================================|
 
 //helper function to serialize form data
@@ -21,15 +21,26 @@ $.fn.serializeObject = function(){
 };
 
 //=======================================|
-//
-// FORM DATA GRABBER
+//   form data grabber
+//  SUBMISSION EVENT LISTENER/HANDLER 
+//    
+//   on submit event --> take form object 
+//   passed?
+//   serialize --> stick in chrome.storage
+//  
+//   ON SUBMISSION EVENT, PUT THE 
+//   FORM DATA INTO chrome.storage
+// 
+//   
+// 
+// 
 //=======================================|
 
 
 $(function() {
-    //THIS NEEDS TO BE TURNED INTO AN EVENT HANDLER
+    //THIS NEEDS TO BE TURNED INTO AN EVENT LISTENER-HANDLER or added to hack-y "onsubmit=""" attached to the submit button 
     $('form').submit(function() {
-        //use helper function
+        //use helper function - TURN INTO JSON OBJECT
         var jsonified = JSON.stringify($('form').serializeObject());
         //display JSON obj (should be removed)
         $('#result').text(jsonified);
@@ -44,11 +55,38 @@ $(function() {
 });
 
 
-//script that checks localstorage, publishes t
+//=======================================|
+//
+//script that checks chrome.storage
+//   if date < data --> SEND TO CONTENT.JS 
+//=======================================|
+
+
 
 function checkAndPostMessages(){
   //... 
 }
 
-//check every minute
+
+//======================================|
+//
+//  RUN THIS SHIT ALL THE TIME 
+//
+//=======================================|
+
+
 setInterval(checkAndPostMessages, 60000);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
