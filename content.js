@@ -4,7 +4,7 @@
 
 console.log("chrome extension party!");
 alert("woo!");
-
+window.localStorage.setItem("check1", "content.js can write to localStorage");
 
 //====================================================|
 //  helper function GET FORM DATA FROM BACKGROUND.JS 

@@ -6,8 +6,8 @@
 //clickhandler helper function
 
 function clickHandler(e) {
+    window.localStorage.setItem("testing", "clickHandler is doing its thang");
     chrome.extension.sendMessage({directive: "submit-form"}, function(response) {
-        debugger;
         //console.log("listening for submit in popup.js!"); //testing
     });
 }
