@@ -1,31 +1,49 @@
-//copypasta - trying to listen to submit button
+//=======================================|
+//   form data grabber
+//  SUBMISSION EVENT LISTENER/HANDLER 
+//    
+//   on submit event --> Callback:
+//     take form object passed -->
+//     serialize --> stick in 
+//     chrome.storage
+// 
+// 
+//=======================================|
 
-// chrome.extension.onMessage.addListener(
-//     function(request, sender, sendResponse) {
-//         switch (request.directive) {
-//         case "form-submit-click":
-//             // execute the content script
-//             chrome.tabs.executeScript(null, { // defaults to the current tab
-//                 file: "contentscript.js", // script to inject into page and run in sandbox
-//                 allFrames: true // This injects script into iframes in the page and doesn't work before 4.0.266.0.
-//             });
-//             sendResponse({}); // sending back empty response to sender
-//             break;
-//         default:
-//             // helps debug when request directive doesn't match
-//             alert("Unmatched request of '" + request + "' from script to background.js from " + sender);
-//         }
-//     }
-// );
+
+chrome.extension.onMessage.addListener(
+    function(request, sender, sendResponse){
+        switch (request.directive){
+            case "submit-form": //set in popup.js
+                //execute the content script
+                chrome.tabs.executeScript(
+                    null, // defaults to current tab
+                    {file: "content.js",
+                    allFrames: true}
+                    //optional callback fn([arrayofAny]){}
+                );
+                sendResponse({}); // send back empty response
+                break;
+            default:
+                //debug when request.directive doesn't match
+                alert("Unmatched request of '" + request + "' from script to background.js from " + sender);
+        }
+    }
+);
+
+
+
+
+
 
 
 
 
 //=========================================================|
 //        STATUS: copypasta, works in regular browser      |
-//        This is a helper fn for form data grabber, i.e. 
-//        submission event handler below
-//==========================================================|
+//        This is a helper fn for form data grabber, i.e.  |
+//        submission event handler below                   |
+//=========================================================|
 
 //helper function to serialize form data
 $.fn.serializeObject = function(){
@@ -48,14 +66,10 @@ $.fn.serializeObject = function(){
 //   form data grabber
 //  SUBMISSION EVENT LISTENER/HANDLER 
 //    
-//   on submit event --> take form object 
-//   passed?
-//   serialize --> stick in chrome.storage
-//  
-//   ON SUBMISSION EVENT, PUT THE 
-//   FORM DATA INTO chrome.storage
-// 
-//   
+//   on submit event --> Callback:
+//     take form object passed -->
+//     serialize --> stick in 
+//     chrome.storage
 // 
 // 
 //=======================================|
@@ -108,8 +122,9 @@ function checkAndPostMessages(){
 //======================================|
 //
 //  RUN THIS SHIT ALL THE TIME 
+//  may need to use chrome.alarms API   |
 //
-//=======================================|
+//======================================|
 
 
 setInterval(checkAndPostMessages, 60000);
