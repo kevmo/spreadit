@@ -3,6 +3,7 @@
 //  
 
 console.log("chrome extension party!");
+alert("woo!");
 
 
 //====================================================|
