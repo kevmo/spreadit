@@ -1,0 +1,12 @@
+consider the following: pricing, uptime, scalability, monitoring, level of control, ease of deployment
+
+heroku
+pros: free 512mb and 1 cpu, easy git deployment, doesn't support websockets (does support socket.io)
+
+heroky deployment:
+1 - command line tools
+package.json
+Procfile
+make your app listen on process.env.PORT
+deploy
+
