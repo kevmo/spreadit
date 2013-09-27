@@ -1,12 +1,6 @@
 //=======================================|
-//   form data grabber
-//  SUBMISSION EVENT LISTENER/HANDLER 
+//  SUBMISSION EVENT LISTENER/HANDLER    |
 //    
-//   on submit event --> Callback:
-//     take form object passed -->
-//     serialize --> stick in 
-//     chrome.storage
-// 
 // 
 //=======================================|
 
@@ -30,12 +24,6 @@ chrome.extension.onMessage.addListener(
         }
     }
 );
-
-
-
-
-
-
 
 
 
@@ -76,16 +64,6 @@ $.fn.serializeObject = function(){
 
 
 
-
-
-
-
-chrome.browserAction.onClicked.addListener(function() {
-    document.forms.newLink.addEventListener("submit", function(){
-        console.log("submitting");
-        return false;
-    });
-};
 
 
 // $(function() {
