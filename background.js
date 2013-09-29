@@ -4,18 +4,38 @@
 //                                       |
 //=======================================|
 
+//I KNOW THIS WORKS: 
+// chrome.extension.onMessage.addListener(
+//     function(request, sender, sendResponse){
+//         switch (request.directive){
+//             case "submit-form": //set in popup.js
+//                 //execute the content script
+//                 chrome.tabs.executeScript(
+//                     null, // defaults to current tab
+//                     {file: "content.js",
+//                     allFrames: true}
+//                     //optional callback fn([arrayofAny]){}
+//                 );
+//                 sendResponse({}); // send back empty response
+//                 break;
+//             default:
+//                 //debug when request.directive doesn't match
+//                 alert("Unmatched request of '" + request + "' from script to background.js from " + sender);
+//         }
+//     }
+// );
 
-chrome.extension.onMessage.addListener(
+
+
+
+chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse){
         switch (request.directive){
             case "submit-form": //set in popup.js
-                //execute the content script
-                chrome.tabs.executeScript(
-                    null, // defaults to current tab
-                    {file: "content.js",
-                    allFrames: true}
-                    //optional callback fn([arrayofAny]){}
-                );
+                //var obj = {"testing": request.title};
+                //chrome.storage.sync.set(obj);
+                chrome.storage.sync.set({"test":"1, 2"});
+                console.log("background.js can log to popup console, apparently");
                 sendResponse({}); // send back empty response
                 break;
             default:
@@ -24,7 +44,6 @@ chrome.extension.onMessage.addListener(
         }
     }
 );
-
 
 
 //=========================================================|

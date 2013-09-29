@@ -28,7 +28,7 @@
 
   "background": {
     "scripts": ["background.js"],
-    "persistent": true
+    "persistent": false
   },
 
   "permissions": [
@@ -37,12 +37,5 @@
      "<all_urls>",
      "http://*/*", 
      "https://*/*"
-  ],
-
-  "content_scripts": [
-    {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["content.js"]
-    }
   ]
 }

@@ -1,17 +1,21 @@
 // 2ndary importance: use this page to make the popup more flashy
 
 
-//DEALING WITH FORM SUBMISSION EVENT: 
+//listen for form submit/click, send form data to background.js
 
-//clickhandler helper function
 
 function clickHandler(e) {
-    window.localStorage.setItem("testing", "clickHandler is doing its thang");
-    chrome.extension.sendMessage({directive: "submit-form"}, function(response) {
-        //console.log("listening for submit in popup.js!"); //testing
-    });
+  console.log("clickhandler is being triggered");
+  //build object out of form data:
+    if (chrome.storage)
+    chrome.runtime.sendMessage({directive: "submit-form", title: document.forms.newLink.title.value}, function(response) {
+        console.log("background.js is listening!"); //testing
+  });
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('submit').addEventListener('click', clickHandler);
+  console.log("Heard the DOM load");
+  document.getElementById('submit').addEventListener('click', clickHandler); //or pass clickHandler
 });
+
+
