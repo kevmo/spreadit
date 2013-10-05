@@ -35,7 +35,6 @@ chrome.runtime.onMessage.addListener(
                 //var obj = {"testing": request.title};
                 //chrome.storage.sync.set(obj);
                 chrome.storage.sync.set({"test":"1, 2"});
-                console.log("background.js can log to popup console, apparently");
                 sendResponse({}); // send back empty response
                 break;
             default:
